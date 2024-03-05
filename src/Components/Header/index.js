@@ -7,14 +7,12 @@ const HeaderComponent =() =>{
 
     const navData = [
         {name:'Home', link:'/'},
-        {name:'Movies', link:'/movies'},
-        {name: 'About Us', link: '/about'}
+       
     ]
     return(
         <header className='header'color="#123456">
             <Navbar bg="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand> Movies Application </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                     <Nav
