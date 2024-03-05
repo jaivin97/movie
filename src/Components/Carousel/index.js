@@ -5,9 +5,6 @@ import {img_300, no_picture} from '../../Config';
 const handleDragStart = (e) => e.preventDefault();
 
 function DarkVariantExample({data}) {
-    //console.log('cast',data);
-    
-   
    const responsive = {
     0: {
         items: 1,

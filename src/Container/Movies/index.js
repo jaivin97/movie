@@ -23,7 +23,7 @@ const MoviewContainer = () => {
             const { data } = await authFetch.get(`/3/movie/${id}?api_key=${APIKEY}&language=en-US`);
             setContent(data);
         } catch (error) {
-            console.error(error)
+            console.error("fetchData", error)
         }
     }
 
@@ -32,7 +32,7 @@ const MoviewContainer = () => {
             const { data } = await authFetch.get(`/3/movie/${id}/videos?api_key=${APIKEY}&language=en-US`);
             setVideo(data.results[0]?.key);
         } catch (error) {
-            console.error(error)
+            console.error("fetchVideo", error)
         }
     }
 
@@ -40,15 +40,13 @@ const MoviewContainer = () => {
         try {
             const { data } = await authFetch.get(`/3/movie/${id}/credits?api_key=${APIKEY}&language=en-US`);
             setCredits(data.cast);
-            console.log('sdata', data);
         } catch (error) {
-            console.error(error)
+            console.error("creditsFetch",error)
         }
     }
 
 
     useEffect(() => {
-        console.log("Details ", params)
         fetchData();
         fetchVideo();
         creditsFetch();

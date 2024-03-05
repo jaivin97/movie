@@ -24,7 +24,6 @@ const HomeContainer = () => {
 
     const PopularMovie = async () => {
         try {
-
             const { data } = await authFetch.get(`/3/movie/popular?language=en-US&page=${pages}`);
             setmovie([]);
             setpaginationno(0);
@@ -103,9 +102,8 @@ const HomeContainer = () => {
                                     <CardMovieComponent key={index} data={item} />
                                 </>
                             )
-                        }) : "Loading...."
+                        }) : "No Data Found"
                     }
-
                     {
                         paginationno && paginationno > 1 ? <PaginationComponent maxnum={paginationno} activenum={pages} handleClick={handleClick} /> : ''
                     }
